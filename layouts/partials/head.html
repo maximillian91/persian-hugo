@@ -41,7 +41,7 @@ AUTHOR WEBSITE: https://themefisher.com
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
   <!-- google analytics -->
-  {{ if hasPrefix .Site.GoogleAnalytics "G-" -}}
+  {{ if hasPrefix .Site.Config.Services.GoogleAnalytics.ID "G-" -}}
     {{ template "_internal/google_analytics.html" . -}}
   {{ else -}}
     {{ template "_internal/google_analytics_async.html" . -}}
