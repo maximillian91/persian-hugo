@@ -13,7 +13,7 @@
     <div class="row">
       {{ $paginator := .Paginate (where .Data.Pages "Section" "post") }}
       {{ range $index,$elements:= $paginator.Pages }}
-      {{ if eq $index 0}}
+      {{ if eq $index -1}}
       <div class="col-12 mb-4">
         <div class="post">
           <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">

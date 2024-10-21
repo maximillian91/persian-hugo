@@ -5,7 +5,7 @@
     <div class="row">
       {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
       {{ range $index,$elements:= $paginator.Pages }}
-      {{ if eq $index 0}}
+      {{ if eq $index -1}}
       <div class="col-12 mb-5">
         <div class="post">
           <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
@@ -25,7 +25,7 @@
         </div>
       </div>
       {{ else }}
-      <div class="col-md-4 mb-5">
+      <div class="col-md-6 mb-5">
         <div class="post post-sm">
           <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
           <div class="post-content">
