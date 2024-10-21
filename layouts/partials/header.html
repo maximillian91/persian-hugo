@@ -2,7 +2,7 @@
 <header class="py-4">
   <div class="container-fluid">
     <!-- navbar -->
-    <nav class="navbar navbar-light">
+    <nav class="navbar navbar-light d-flex align-items-center justify-content-between">
       <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
         {{ if .Site.Params.logo }}
         <img class="img-fluid" width="100px" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}">
@@ -10,10 +10,28 @@
         {{.Site.Title}}
         {{ end }}
       </a>
-      <!-- Always visible toggler button for dropdown menu -->
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="ti-menu"></i>
-      </button>
+
+      <div class="d-flex align-items-center">
+        <!-- Search button placed right next to the dropdown button -->
+        {{ if .Site.Params.search }}
+        {{ "<!-- search -->" | safeHTML }}
+        <div class="search">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="{{ `search`| relLangURL }}" class="h-100">
+              <input class="search-box pl-4" id="search-query" name="s" type="search" placeholder="Type and hit enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        {{ end }}
+        
+        <!-- Always visible toggler button for dropdown menu -->
+        <button class="navbar-toggler border-0 mr-2" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="ti-menu"></i>
+        </button>
+
+      </div>
 
       <div class="collapse navbar-collapse text-center" id="navigation">
         <ul class="navbar-nav mr-auto">
@@ -36,19 +54,6 @@
           {{ end }}
           {{ end }}
         </ul>
-
-        {{ if .Site.Params.search }}
-        {{ "<!-- search -->" | safeHTML }}
-        <div class="search px-4">
-          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
-          <div class="search-wrapper">
-            <form action="{{ `search`| relLangURL }}" class="h-100">
-              <input class="search-box pl-4" id="search-query" name="s" type="search" placeholder="Type and hit enter...">
-            </form>
-            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
-          </div>
-        </div>
-        {{ end }}
       </div>
     </nav>
   </div>
