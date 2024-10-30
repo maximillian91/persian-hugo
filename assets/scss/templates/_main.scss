@@ -105,6 +105,16 @@
 
   .post-meta {
     margin-bottom: 0;
+    
+    // Set the position of the meta in top of the image on the left side
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    @include mobile {
+      top: 5px;
+      left: 5px;
+    }
 
     i {
       color: $white;
@@ -121,7 +131,11 @@
 
   &-sm {
     .post-title {
-      font-size: 1.7rem;
+      // Set the position of the title in the bottom of the image on the left side
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      font-size: 1.2rem;
 
       @include mobile {
         font-size: 1.2rem;
