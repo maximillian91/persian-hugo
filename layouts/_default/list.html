@@ -16,8 +16,8 @@
       {{ if eq $index -1}}
       <div class="col-12 mb-4">
         <div class="post">
-          <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
-          <div class="post-content">
+            <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
+                    <div class="post-content">
             <!-- <div class="post-date">
               <span>{{ .PublishDate.Format "02" }}</span>
               <span>{{ .PublishDate.Format "Jan" }}</span>
@@ -32,9 +32,9 @@
         </div>
       </div>
       {{ else }}
-      <div class="col-md-6 mb-4">
+      <div class="col-md-4 mb-5">
         <div class="post post-sm">
-          <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
+            <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
           <div class="post-content">
             <!-- <div class="post-date">
               <span>{{ .PublishDate.Format "02" }}</span>
