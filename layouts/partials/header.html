@@ -4,11 +4,11 @@
     <!-- navbar -->
     <nav class="navbar navbar-light d-flex align-items-center justify-content-between">
       <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-        {{ if .Site.Params.logo }}
+        {{/*  {{ if .Site.Params.logo }}  */}}
         <img class="img-fluid" width="100px" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}">
-        {{ else }}
-        {{.Site.Title}}
-        {{ end }}
+        {{/*  {{ else }}  */}}
+        <h3>{{.Site.Title}}</h3>
+        {{/*  {{ end }}  */}}
       </a>
 
       <div class="d-flex align-items-center">
